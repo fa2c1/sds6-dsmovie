@@ -28,9 +28,13 @@ function Listing() {
         });
     }, [pageNumber])
 
+    const randlePageChange = (newPageNumber: number) => {
+        setPageNumber(newPageNumber);
+    }
+
     return (
         <>
-            <Pagination />
+            <Pagination page={page} onChange={randlePageChange} />
             <div className="container">
                 <div className="row">
                     {page.content.map(movie => (
